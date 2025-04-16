@@ -125,14 +125,14 @@ console.log("-----(trriangle)-----")
 
 for (let i = 1; i <= 5; i++) {
     let margin = ""
-    for (let m=5; m>i; m--) {
+    for (let m = 5; m > i; m--) {
         margin += " "
     }
     let star = ""
-    for (let s=0; s<i; s++) {
+    for (let s = 0; s < i; s++) {
         star += "* "
     }
-    console.log(margin+star)
+    console.log(margin + star)
 }
 
 console.log("-----(rectangle)-----")
@@ -149,11 +149,22 @@ console.log("-----(rectangle)-----")
 
 for (let i = 5; i >= 1; i--) {
     let star = ""
-    for (let j = 5; j >= 1; j--){
-        star += "* "
+    if (i === 5 || i === 5 - (5 - 1)) {
+        for (let j = 5; j >= 1; j--) {
+            star += "* "
+        }
+    } else {
+        for (let j = 5; j >= 1; j--) {
+            if (j === 5 || j === 5 - (5 - 1)) {
+                star += "* "
+            } else {
+                star += "  "
+            }
+        }
     }
+
     console.log(star)
-} //not completed though
+}
 
 console.log("-----(sliced rec)-----")
 
@@ -169,14 +180,14 @@ console.log("-----(sliced rec)-----")
 
 for (let i = 1; i <= 5; i++) {
     let tri1 = ""
-    for (let t=5; t>i; t--) {
+    for (let t = 5; t > i; t--) {
         tri1 += "* "
     }
     let tri2 = ""
-    for (let t=1; t<i; t++) {
+    for (let t = 1; t < i; t++) {
         tri2 += " *"
     }
-    console.log(tri1+" "+tri2)
+    console.log(tri1 + " " + tri2)
 }
 
 console.log("-----(diagonal line)-----")
@@ -193,9 +204,59 @@ console.log("-----(diagonal line)-----")
 
 for (let i = 1; i <= 5; i++) {
     let margin = ""
-    for (let m=5; m>i; m--) {
+    for (let m = 5; m > i; m--) {
         margin += "  "
     }
     let star = "*"
-    console.log(margin+star)
+    console.log(margin + star)
 }
+
+//looping array
+
+const studentData = [
+    { nama: "John", score: 80 },
+    { nama: "Arie", score: 99 },
+    { nama: "Denis", score: 60 },
+    { nama: "Jane", score: 85 },
+    { nama: "Ed", score: 90 },
+]
+
+// nilai rata-rata
+
+let average = 0
+for (let i = 0; i < studentData.length; i++) {
+    average += studentData[i].score
+}
+
+average = average / studentData.length
+console.log("nilai rata-rata adalah " + average)
+
+// siswa tertinggi
+
+let high = {
+    score: 0
+}
+
+for (let i = 0; i < studentData.length; i++) {
+    if (studentData[i].score > high.score) {
+        high = studentData[i]
+    }
+}
+
+
+console.log("nilai tertinggi adalah " + high.score + " dengan siswa bernama " + high.nama)
+
+// siswa terendah
+
+let low = {
+    score: 0
+}
+
+for (let i = 0; i < studentData.length; i++) {
+    if (low.score === 0 || studentData[i].score < low.score) {
+        low = studentData[i]
+    }
+}
+
+
+console.log("nilai tertinggi adalah " + low.score + " dengan siswa bernama " + low.nama)
