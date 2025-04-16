@@ -110,3 +110,92 @@ do {
     console.log(starDoWhileLoop)
     qDoWhile++
 } while (qDoWhile <= 5);
+
+console.log("-----(trriangle)-----")
+
+/*
+
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
+
+*/
+
+for (let i = 1; i <= 5; i++) {
+    let margin = ""
+    for (let m=5; m>i; m--) {
+        margin += " "
+    }
+    let star = ""
+    for (let s=0; s<i; s++) {
+        star += "* "
+    }
+    console.log(margin+star)
+}
+
+console.log("-----(rectangle)-----")
+
+/*
+
+* * * * *
+*       *
+*       *
+*       *
+* * * * *
+
+*/
+
+for (let i = 5; i >= 1; i--) {
+    let star = ""
+    for (let j = 5; j >= 1; j--){
+        star += "* "
+    }
+    console.log(star)
+} //not completed though
+
+console.log("-----(sliced rec)-----")
+
+/*
+
+* * * *
+* * *   *
+* *   * *
+*   * * *
+  * * * *
+
+*/
+
+for (let i = 1; i <= 5; i++) {
+    let tri1 = ""
+    for (let t=5; t>i; t--) {
+        tri1 += "* "
+    }
+    let tri2 = ""
+    for (let t=1; t<i; t++) {
+        tri2 += " *"
+    }
+    console.log(tri1+" "+tri2)
+}
+
+console.log("-----(diagonal line)-----")
+
+/*
+
+        *
+      *
+    *
+  *
+*
+
+*/
+
+for (let i = 1; i <= 5; i++) {
+    let margin = ""
+    for (let m=5; m>i; m--) {
+        margin += "  "
+    }
+    let star = "*"
+    console.log(margin+star)
+}
