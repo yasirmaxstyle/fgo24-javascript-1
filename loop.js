@@ -113,6 +113,8 @@ do {
 
 console.log("-----(trriangle)-----")
 
+const input = 5
+
 /*
 
     *
@@ -123,9 +125,9 @@ console.log("-----(trriangle)-----")
 
 */
 
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= input; i++) {
     let margin = ""
-    for (let m = 5; m > i; m--) {
+    for (let m = input; m > i; m--) {
         margin += " "
     }
     let star = ""
@@ -133,6 +135,20 @@ for (let i = 1; i <= 5; i++) {
         star += "* "
     }
     console.log(margin + star)
+}
+
+console.log("-----(using if)-----")
+
+for (let i = 1; i <= input; i++) {
+    // make loop 5 times in every parent loop
+    let triangle = ""
+    for (let j = input; j > 0; j--) {
+        if (j > i) triangle += " "
+        else triangle += "* "
+    }
+
+    // combine margin and star in the output
+    console.log(triangle)
 }
 
 console.log("-----(rectangle)-----")
@@ -147,15 +163,15 @@ console.log("-----(rectangle)-----")
 
 */
 
-for (let i = 5; i >= 1; i--) {
+for (let i = input; i >= 1; i--) {
     let star = ""
-    if (i === 5 || i === 5 - (5 - 1)) {
-        for (let j = 5; j >= 1; j--) {
+    if (i === 5 || i === input - (input - 1)) {
+        for (let j = input; j >= 1; j--) {
             star += "* "
         }
     } else {
-        for (let j = 5; j >= 1; j--) {
-            if (j === 5 || j === 5 - (5 - 1)) {
+        for (let j = input; j >= 1; j--) {
+            if (j === input || j === input - (input - 1)) {
                 star += "* "
             } else {
                 star += "  "
@@ -178,9 +194,9 @@ console.log("-----(sliced rec)-----")
 
 */
 
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= input; i++) {
     let tri1 = ""
-    for (let t = 5; t > i; t--) {
+    for (let t = input; t > i; t--) {
         tri1 += "* "
     }
     let tri2 = ""
@@ -202,9 +218,9 @@ console.log("-----(diagonal line)-----")
 
 */
 
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= input; i++) {
     let margin = ""
-    for (let m = 5; m > i; m--) {
+    for (let m = input; m > i; m--) {
         margin += "  "
     }
     let star = "*"
